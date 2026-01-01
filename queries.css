@@ -1,0 +1,52 @@
+@media(max-width: 74.125rem){
+    html{
+        font-size: 56.52%;;
+    }
+
+    h1{
+        font-size: 3.8rem;
+    }
+
+    .heading-and-arrow{
+        margin-bottom: 2.5rem;
+        margin-top: 4.5rem;
+    }
+
+    .hero-arrow{
+        height: 8rem;
+    }
+
+    .hero-flex{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .hero-img{
+        max-width: 250px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 36.25rem){
+    html{
+        font-size: 31.5%;
+    }
+
+    .hero-img{
+        max-width: 150px;
+        width: 100%;
+    }
+
+    h1{
+        font-size: 3.6rem;
+    }
+
+    .project-arrow{
+        width: 3rem;
+    }
+
+    .cert-img{
+        max-width: auto;
+        width: 70%;
+    }
+}

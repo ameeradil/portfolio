@@ -1,0 +1,438 @@
+:root {
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+   font-size: 62.5%; 
+   scroll-behavior: smooth;
+   /* 10px / 16px = 62.5% */
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+}
+
+.main-container {
+    max-width: 1168px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+h2{
+    font-size: 3.2rem;
+    color: white;
+    font-weight: bold;
+    line-height: 153.5%;
+    margin-right: 0.8rem;
+}
+/* Nav Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    gap: 5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: white;
+    margin-top: 1rem;
+}
+
+.nav-container a {
+  position: relative;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.nav-container a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background-color: #1DA1F2;
+  transition: width 0.3s ease;
+}
+
+.nav-container a:hover {
+  color: #1DA1F2;
+}
+
+.nav-container a:hover::after {
+  width: 100%;
+}
+
+
+.beta{
+    margin-top: 2.5rem;
+}
+
+/* Hero Section */
+
+.hero-section{
+    margin-top: 18rem;
+}
+h1{
+    font-size: 4.8rem;
+    color: #71767B;
+    font-weight: 700;
+}
+
+.hero-flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero-left{
+    display: flex;
+    flex-direction: column;
+    width: 61.8rem;
+}
+
+.heading-and-arrow{
+    display: flex;
+    align-items: center;
+}
+
+.hero-paragraph{
+    font-size: 2.2rem;
+    color: white;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.hero-img{
+  max-width: 300px;
+  width: 100%;
+}
+
+.hero-arrow{
+  max-width: 129px;
+  width: 100%;
+}
+
+/* Projects Section */
+.projects-section{
+    margin-top: 12.5rem;
+}
+
+.projects-first-line{
+    display: flex;
+    margin-bottom: 2.5rem;
+}
+
+.projects-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+h3 {
+    font-size: 2.8rem;
+    color: white;
+    font-weight: 500;
+    margin-top: 1.2rem;
+    margin-left: 3rem;
+    margin-bottom: 0.9rem;
+}
+
+.projects-paragraph{
+    color: #71767B;
+    font-size: 2.2rem;
+    margin-left: 3rem;
+}
+
+/* One project container */
+.one-project {
+  border: thin solid white;
+  border-radius: 6px;
+  position: relative;
+  height: 17rem;
+  overflow: hidden; /* prevents circles from spilling out */
+  transition: transform 0.3s ease;
+  z-index: 1; /* ensures content is above big circle */
+}
+
+/* Arrow animation */
+.project-arrow {
+  position: absolute;
+  bottom: 1.8rem;
+  right: 2.4rem;
+  transition: transform 0.3s ease;
+  z-index: 2; /* above big circle */
+}
+
+/* Small circle near arrow */
+.one-project::after {
+  content: '';
+  position: absolute;
+  width: 1.2rem;   /* slightly bigger than before */
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: #1DA1F2; /* Twitter blue */
+  right: 2.4rem;  /* same side as arrow */
+  bottom: 1.8rem; /* align with arrow */
+  opacity: 0;      /* initially invisible */
+  transform: scale(0); /* start small */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 2; /* above big circle */
+}
+
+/* Hover effects */
+.one-project:hover .project-arrow {
+  transform: translateX(-0.8rem); /* arrow moves slightly left */
+}
+
+.one-project:hover::before {
+  width: 60%;  /* big circle expands ~3/5 container width */
+  height: 60%; /* big circle expands ~3/5 container height */
+}
+
+.one-project:hover::after {
+  opacity: 1;         /* show small circle */
+  transform: scale(1); /* scale small circle */
+}
+
+
+.line{
+  max-width: auto;
+  width: 100%;
+}
+
+/* Skills Section */
+.skills-section{
+    margin-top: 12.5rem;
+}
+
+.skills-first-line{
+    display: flex;
+}
+
+.skills-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills-img{
+  max-width: 601px;
+  width: 100%;
+}
+
+.skills-skills {
+  max-width: 282px;
+  width: 100%;
+}
+
+
+/* Certifications Section */
+.certifications-section {
+    margin-top: 12.5rem;
+}
+
+.certifications-first-line {
+    display: flex;
+    margin-bottom: 2.5rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    margin: 1rem 0; /* spacing between image and button */
+}
+
+.certification-section {
+  max-width: 1200px;
+  margin: 8rem auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+}
+
+/* Grid */
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr));
+  gap: 2.4rem;
+}
+
+/* Card */
+.cert-card {
+  height: 40rem;
+  border: 1px solid #2a2f3a;
+  border-radius: 6px;
+  padding: 2.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.cert-card:hover {
+  border-color: #71767b;
+  transform: translateY(-.6rem);
+}
+
+/* Icon */
+.icon {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  color: #9aa4ff;
+}
+
+/* Text */
+.cert-card h3 {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #e6e6e6;
+}
+
+/* Link */
+.cert-card a {
+  font-size: 1.4rem;
+  color: #71767B;
+  text-decoration: none;
+  border-top: 1px solid #2a2f3a;
+  padding-top: 1.4rem;
+}
+
+.cert-card a:hover {
+  color: #ffffff;
+}
+
+.icon {
+  width: 28rem;
+  height: 19rem;
+  overflow: hidden;   /* 🔥 prevents visual overflow */
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.cert-img{
+  max-width: auto;
+  width: 70%;
+}
+
+
+
+/* Education Section */
+.education-section{
+    margin-top: 12.5rem;
+}
+
+.education-first-line{
+    display: flex;
+    margin-bottom: 2.5rem;
+}
+
+h5{
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 500;
+}
+
+.education-date{
+    color: #71767B;
+    font-size: 1.8rem;
+}
+
+.education-text{
+    font-size: 1.8rem;
+    color: white;
+}
+
+.narxoz{
+    margin-bottom: 4.5rem;
+}
+
+.farabi{
+    margin-bottom: 4.5rem;
+}
+
+.khartoum{
+    margin-bottom: 4.5rem;
+}
+
+
+button {
+    background-color: transparent;
+    color: white; 
+    border: thin solid #71767B;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    border-radius: 0.5rem; 
+    cursor: pointer; 
+    width: 100%;          /* makes the button stretch the container */
+    box-sizing: border-box; /* ensures padding is included in width */
+    text-align: center;   /* centers the text inside the button */
+}
+
+
+
+/* Footer - Contact Section */
+.footer{
+    margin-top: 12.5rem;
+    margin-bottom: 4.5rem;
+}
+
+.contact-first-line{
+    display: flex;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+}
+
+.footer-paragraph{
+    font-size: 2.2rem;
+    color: white;
+
+}
+
+.closing-sentence{
+    font-size: 2.2rem;
+    color: white;
+    opacity: 0.45;
+}
+
+.icons-flex{
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+}
