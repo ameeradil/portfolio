@@ -7,11 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const hoverSrc = img.dataset.hover;
         if (!hoverSrc) return;
 
-        card.addEventListener('mouseenter', () => {
+        const hoverTarget = card.classList.contains('narxoz') || card.classList.contains('farabi')
+            ? img
+            : card;
+
+        hoverTarget.addEventListener('mouseenter', () => {
             img.src = hoverSrc;
         });
 
-        card.addEventListener('mouseleave', () => {
+        hoverTarget.addEventListener('mouseleave', () => {
             img.src = originalSrc;
         });
     });
