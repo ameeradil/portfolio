@@ -405,6 +405,20 @@ button {
     text-align: center;   /* centers the text inside the button */
 }
 
+/* Reusable hover animation */
+.hover-animate {
+    transition: 
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+/* Hover effect */
+.hover-animate:hover {
+    transform: translateY(-6px) scale(1.15);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+}
+
+
 
 
 /* Footer - Contact Section */
@@ -436,8 +450,23 @@ button {
     opacity: 0.45;
 }
 
-.icons-flex{
+.icons-flex {
     display: flex;
-    gap: 5rem;
-    align-items: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.icons-flex img {
+    width: 32px;
+    height: 32px;
+    transition: 
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+/* Hover animation */
+.icons-flex a:hover img {
+    transform: translateY(-6px) scale(1.15);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
 }
