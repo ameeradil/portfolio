@@ -297,17 +297,41 @@ h4 {
     flex-direction: column;
     justify-content: space-between;
 
-    /* glass effect on black background */
-    background: rgba(18, 18, 18, 0.65);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    /* AI-style glass background */
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.02)
+        ),
+        rgba(18, 18, 18, 0.55);
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
+    backdrop-filter: blur(18px) saturate(130%);
+    -webkit-backdrop-filter: blur(18px) saturate(130%);
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-    transition: all 0.35s ease;
+    border-radius: 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border 0.35s ease;
 }
+.cert-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 
 .cert-card:hover {
     transform: translateY(-0.6rem);
