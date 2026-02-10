@@ -76,6 +76,7 @@ h2{
   height: 2px;
   background-color: #1DA1F2;
   transition: width 0.3s ease;
+  display: none;
 }
 
 .nav-container a:hover {
