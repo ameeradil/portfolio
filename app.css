@@ -40,6 +40,26 @@ h2{
     line-height: 153.5%;
     margin-right: 0.8rem;
 }
+h2{
+    font-size: 3.2rem;
+    color: white;
+    font-weight: bold;
+    line-height: 153.5%;
+    margin-right: 0.8rem;
+    position: relative;
+    padding-left: 2rem;
+}
+
+h2::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.8rem;
+    height: 3.6rem; /* increased height */
+    background-color: #FFAD1F;
+}
 /* Nav Bar */
 .navbar {
     display: flex;
