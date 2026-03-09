@@ -130,15 +130,12 @@ h2::before{
 
 .hero-layout {
     display: grid;
-    grid-template-columns: 17.6rem 1fr 48.2rem;
+    /* Use minmax to allow columns to shrink on smaller 'desktop' views */
+    grid-template-columns: minmax(10rem, 17.6rem) 1fr minmax(20rem, 48.2rem);
     width: 100%;
-    z-index: 10;
-    position: relative;
-    /* ADD THIS: Ensures columns fill the 80rem height of the section */
     align-items: stretch; 
-    height: 70%; /* Matches your v-line height */
+    height: 70rem; 
 }
-
 /* 2. Decorative Background Lines */
 .line-container {
     position: absolute;
@@ -249,15 +246,19 @@ h2::before{
 
 .image-frame-wrapper {
     position: relative;
-    width: 30rem; /* Matches your headshot width */
+    width: 100%;
+    /* Cap the size so it doesn't overwhelm the screen */
+    max-width: 30rem; 
+    margin: 0 auto; /* Centers the image if the column gets wider */
 }
 
 .main-photo {
     width: 100%;
+    height: auto; /* Keeps the aspect ratio perfect */
     border-radius: 8px;
     display: block;
     position: relative;
-    z-index: 5; /* Sits on top of the frame */
+    z-index: 5;
 }
 
 .photo-bg-frame {
@@ -277,18 +278,14 @@ h2::before{
 /* 5. Right Content Area - Precise Dimensions */
 /* 5. Right Content Area - Independent Top-Aligned Layout */
 .hero-content-area {
-    width: 48.2rem; 
+    /* Change width to max-width */
+    max-width: 48.2rem; 
+    width: 100%; /* Allows it to take up less space on small screens */
     display: flex;
     flex-direction: column;
-    /* Pushes content to the top of its grid cell */
     justify-content: flex-start; 
-    
-    /* Professional inner margins */
     padding-left: 4rem;
     padding-right: 4rem;
-    
-    /* Pushes the entire content block UP to the top of the vertical lines */
-    margin-top: 0; 
     box-sizing: border-box; 
     z-index: 10;
 }
