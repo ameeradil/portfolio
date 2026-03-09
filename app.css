@@ -255,7 +255,7 @@ h2::before{
 .main-photo {
     /* 1. This prevents the 'Shrinking to Nothing' issue */
     /* Adjust '28rem' to whatever looks most professional to you */
-    min-width: 20rem; 
+    min-width: 15rem; 
     
     /* 2. Still allow it to fill a larger container if the screen is huge */
     width: 100%; 
