@@ -59,4 +59,9 @@
         grid-template-columns: 12rem 1fr 48.2rem;
     }
 
+    .main-photo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
