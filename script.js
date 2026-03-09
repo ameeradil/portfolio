@@ -38,3 +38,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+function updateDate() {
+        const dateElement = document.getElementById('current-date');
+        const now = new Date();
+
+        // Format: Day (Number)
+        const day = now.getDate();
+
+        // Format: Month (Full Name)
+        const monthNames = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        const month = monthNames[now.getMonth()];
+
+        // Format: Year (4 Digits)
+        const year = now.getFullYear();
+
+        // Combine into: 12 March 2026
+        dateElement.textContent = `${day} ${month} ${year}`;
+    }
+
+    // Run the function when the page loads
+    updateDate();

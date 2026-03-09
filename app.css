@@ -100,7 +100,7 @@ h2::before{
 }
 
 .nav-container a:hover {
-  color: #FFAD1F;
+  color: #1DA1F2;
 }
 
 .nav-container a:hover::after {
@@ -114,51 +114,289 @@ h2::before{
 
 /* Hero Section */
 
-.hero-section{
-    margin-top: 18rem;
-}
-h1{
-    font-size: 4.8rem;
-    color: #71767B;
-    font-weight: 700;
-}
+/* ==========================================================================
+   HERO SECTION - FINAL PROFESSIONAL LAYOUT
+   ========================================================================== */
 
-.hero-flex{
+/* 1. Base Hero Container */
+.hero-section {
+    position: relative;
+    margin-top: 4rem;
+    min-height: 80rem;
     display: flex;
-    justify-content: space-between;
+    /* Changed from center to flex-start to allow manual top positioning */
+    align-items: flex-start; 
 }
 
-.hero-left{
+.hero-layout {
+    display: grid;
+    grid-template-columns: 17.6rem 1fr 48.2rem;
+    width: 100%;
+    z-index: 10;
+    position: relative;
+    /* ADD THIS: Ensures columns fill the 80rem height of the section */
+    align-items: stretch; 
+    height: 70%; /* Matches your v-line height */
+}
+
+/* 2. Decorative Background Lines */
+.line-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.v-line {
+    position: absolute;
+    width: 1px;
+    height: 67rem; /* Changed from 70% to match the sidebar */
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.v-1 { left: 0; }
+.v-2 { left: 8.8rem; }
+.v-3 { left: 17.6rem; }
+.v-5 { right: 0; }
+.v-4 { right: 48.2rem; }
+
+.h-1 {
+    position: absolute;
+    /* Aligns specifically under the buttons in the third column */
+    top: 29rem; 
+    right: 0;
+    width: 48.2rem; 
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 1;
+}
+
+.v-stem {
+    position: absolute;
+    /* Starts exactly where your h-1 line is positioned */
+    top: 29rem; 
+    /* Centers it horizontally relative to the 48.2rem wide container */
+    /* Right v-5 is at 0, so middle is half of 48.2rem */
+    right: 35rem; 
+    
+    width: 1px;
+    /* Ensures it goes all the way to the bottom of the hero-section */
+    height: 37rem; 
+    
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 1;
+}
+
+/* 3. Left Sidebar - Vertical Text Anchored to Bottom */
+/* 3. Left Sidebar - Vertical Text Anchored to Bottom */
+.hero-left-sidebar {
+    display: flex;
+    /* Match the 70% height of your .v-line exactly */
+    height: 70rem; 
+    position: relative;
+    z-index: 5;
+}
+
+.sidebar-channel {
+    width: 8.8rem;
     display: flex;
     flex-direction: column;
-    width: 61.8rem;
-}
-
-.heading-and-arrow{
-    display: flex;
+    /* This pushes the text to the very bottom of the 70rem line */
+    justify-content: flex-end; 
     align-items: center;
+    /* Space from the bottom tip of the line */
+    padding-bottom: 4rem; 
+    height: 100%; 
 }
 
-.hero-paragraph{
-    font-size: 2.2rem;
+/* Ensure no extra margins are pushing the text out */
+.lang-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    margin: 0; 
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
     color: white;
-    font-weight: 300;
+    line-height: 1;
+    margin: 0;
+}
+.lang-wrapper span::before {
+    content: "• ";
+    color: white;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* 4. Center Photo & Figma Angle Frame */
+/* 4. Center Photo & Figma Angle Frame */
+.hero-image-area {
+    display: flex;
+    justify-content: center;
+    padding: 0 8rem;
+    
+    /* ADD THIS LINE: Centers the photo vertically in the 80rem section */
+    align-self: center; 
+}
+
+.image-frame-wrapper {
+    position: relative;
+    width: 30rem; /* Matches your headshot width */
+}
+
+.main-photo {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    position: relative;
+    z-index: 5; /* Sits on top of the frame */
+}
+
+.photo-bg-frame {
+    position: absolute;
+    /* Anchors it to the bottom-right angle */
+    bottom: -1.5rem; 
+    right: -1.5rem;
+    
+    /* Crucial: Takes its own height/width from Figma without stretching */
+    width: auto;
+    height: auto;
+    
+    z-index: 2; /* Sits behind the photo */
+    pointer-events: none;
+}
+
+/* 5. Right Content Area - Precise Dimensions */
+/* 5. Right Content Area - Independent Top-Aligned Layout */
+.hero-content-area {
+    width: 48.2rem; 
+    display: flex;
+    flex-direction: column;
+    /* Pushes content to the top of its grid cell */
+    justify-content: flex-start; 
+    
+    /* Professional inner margins */
+    padding-left: 4rem;
+    padding-right: 4rem;
+    
+    /* Pushes the entire content block UP to the top of the vertical lines */
+    margin-top: 0; 
+    box-sizing: border-box; 
+    z-index: 10;
+}
+
+/* Welcoming Sentence - No top margin so it touches the top of the lines */
+.gradient-heading {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0 0 2rem 0; /* Removed top margin entirely */
+    line-height: 1.1;
+    background: linear-gradient(90deg, #FFAD1F 0%, #FFD27D 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hero Description */
+.hero-description {
+    font-size: 1.6rem;
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 3.2rem;
     text-align: justify;
 }
+.hero-sub-text {
+    /* 1. POSITIONING: Align to the right side of the 48.2rem column */
+    align-self: flex-end; 
+    position: relative;
+    z-index: 10;
 
-.hero-img{
-  max-width: 300px;
-  width: 100%;
+    /* 2. DIMENSIONS: Exactly half the container width */
+    width: 27rem; 
+    
+    /* 3. SPACING: margin-top moves it below the h-1 line (at top: 29rem) */
+    /* Since buttons have margin-bottom: 4rem, this provides a professional gap */
+    margin-top: 6rem; 
+    
+    /* 4. TYPOGRAPHY: Matches your main description paragraph */
+    font-size: 1.6rem; 
+    color: rgba(255, 255, 255, 0.6); /* Matches main paragraph color for consistency */
+    line-height: 1.6;
+    text-align: justify;
+    
+    /* 5. PADDING: Internal breathing room from the v-stem line */
+    padding-left: 2rem; 
+    box-sizing: border-box;
 }
 
-.hero-arrow{
-  max-width: 129px;
-  width: 100%;
+/* CTA Buttons */
+.hero-cta-buttons {
+    display: flex;
+    gap: 1.6rem;
+    /* Margin here controls the gap for the divider line (h-1) */
+    /* margin-bottom: 4rem;  */
 }
 
+
+/* Base button structure */
+.btn-primary, .btn-outline {
+    width: 16rem; 
+    height: 4.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 1.6rem;
+    font-weight: 400; /* Regular text as requested */
+    text-decoration: none;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+/* 1. Blue Primary Button: Smooth color transition, no shadows */
+.btn-primary {
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    /* Added transform to the transition for a smooth movement */
+    /* 0.3s is the 'sweet spot' for professional UI transitions */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
+    position: relative;
+    z-index: 2;
+}
+
+.btn-primary:hover {
+    background-color: #3367D6;
+    /* Clean vertical lift without any shadow */
+    transform: translateY(-5px);
+}
+
+/* Returns to original position smoothly when mouse leaves */
+
+/* 2. Ghost Outline Button: Completely static, no transitions or hover */
+.btn-outline {
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+}
+
+/* Ensuring no visual change on hover for the ghost button */
+.btn-outline:hover {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+}
 /* Projects Section */
 .projects-section{
-    margin-top: 12.5rem;
+    margin-top: 1rem;
 }
 
 .projects-first-line{
