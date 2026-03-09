@@ -1,3 +1,35 @@
+@media (max-width: 1024px) {
+    /* 1. Change the Grid to a Single Column */
+    .hero-layout {
+        display: flex;
+        flex-direction: column;
+        height: auto; /* Allow the page to grow vertically */
+        align-items: center;
+        text-align: center;
+    }
+
+    /* 2. Make the Image Large and Professional */
+    .image-frame-wrapper {
+        width: 80%; /* Takes up most of the phone width */
+        max-width: 35rem; /* But doesn't get too giant */
+        margin: 4rem auto; /* Adds space above and below the photo */
+        order: 1; /* Puts the image at the top or middle */
+    }
+
+    /* 3. Fix the Right Container (The Text) */
+    .hero-content-area {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 2rem;
+        order: 2;
+    }
+
+    /* 4. Hide Decorative Lines on Mobile */
+    /* Busy grid lines often look 'dirty' on small phone screens */
+    .line-container {
+        display: none; 
+    }
+}
 /* @media(max-width: 74.125rem){
     html{
         font-size: 56.52%;;
