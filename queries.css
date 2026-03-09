@@ -54,9 +54,43 @@
 } */
 
 /* This triggers when the screen is 1100px or narrower */
+
 @media (max-width: 1100px) {
+    /* 1. Update the Grid to pull the image left */
     .hero-layout {
-        grid-template-columns: 14rem 1fr 48.2rem;
+        /* Sidebar is now 12rem, giving the image more space */
+        grid-template-columns: 12rem 1fr 48.2rem;
+
+    }
+
+    /* 2. Tighten the Line Spacing */
+    .v-1 { 
+        left: 0; 
+    }
+    
+    .v-2 { 
+        /* This sets the gap between line 1 and line 2 to 7rem */
+        left: 7rem; 
+    }
+    .v-3 { 
+        /* Second gap: 7rem (Total 14rem) */
+        /* This line now sits exactly at the edge of the sidebar and image */
+        left: 14rem; 
+        display: block; /* Ensures it stays visible */
+    }
+    /* 3. Adjust Sidebar Content (Dates/Languages) */
+    /* If you have a container for your sidebar text, 
+       ensure it matches the new 7rem line width */
+    .sidebar-content {
+        width: 7rem;
+        overflow: hidden;
+    }
+    /* 3. Ensure the line-container matches the new width */
+    .line-container {
+        /* Keeping it centered and aligned with the hero-layout */
+        max-width: 1200px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .main-photo {
