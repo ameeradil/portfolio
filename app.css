@@ -251,14 +251,24 @@ h2::before{
     max-width: 30rem; 
     margin: 0 auto; /* Centers the image if the column gets wider */
 }
-
+/* Here is the image issue */
 .main-photo {
-    width: 100%;
-    height: auto; /* Keeps the aspect ratio perfect */
+    /* 1. This prevents the 'Shrinking to Nothing' issue */
+    /* Adjust '28rem' to whatever looks most professional to you */
+    min-width: 20rem; 
+    
+    /* 2. Still allow it to fill a larger container if the screen is huge */
+    width: 100%; 
+    max-width: 35rem; 
+    
+    height: auto; 
     border-radius: 8px;
     display: block;
     position: relative;
     z-index: 5;
+    
+    /* 3. This ensures the image doesn't look 'stretched' or 'squashed' */
+    object-fit: cover; 
 }
 
 .photo-bg-frame {
