@@ -55,15 +55,6 @@
 
 /* This triggers when the screen is 1100px or narrower */
 @media (max-width: 1100px) {
-    
-    /* 1. Hide the third vertical line to give the image space */
-    .v-3 {
-        display: none;
-    }
-
-    .v-2{
-        display: none;
-    }
     .hero-layout {
         grid-template-columns: 12rem 1fr 48.2rem;
     }
