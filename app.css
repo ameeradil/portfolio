@@ -222,7 +222,7 @@ h2::before{
 }
 .lang-wrapper span::before {
     content: "• ";
-    color: white;
+    color: #FFAD1F;
     margin-bottom: 0.5rem;
     display: inline-block;
 }
