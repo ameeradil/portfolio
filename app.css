@@ -263,7 +263,18 @@ h2::before{
     z-index: 5;
     
     /* 3. This ensures the image doesn't look 'stretched' or 'squashed' */
-    object-fit: cover; 
+    object-fit: cover;
+    user-drag: none; 
+    -webkit-user-drag: none;
+    
+    /* Prevents the image from being 'highlighted' or selected */
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    
+    /* Ensures the mouse cursor stays as a default pointer */
+    pointer-events: none; 
 }
 
 .photo-bg-frame {
