@@ -411,7 +411,7 @@ h2::before{
 /* --- SECTION --- */
 .projects-parallax-section {
     position: relative;
-    margin-top: 4rem; 
+    margin-top: -2.5rem; 
     padding: 5rem 0 15rem 0; /* Tightened padding */
     overflow: hidden;
     background: transparent;
