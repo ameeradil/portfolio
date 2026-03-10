@@ -69,38 +69,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.parallax-item');
     if (!section || items.length === 0) return;
 
-    // CRAZY SPEEDS: This creates the 'bombing' / overlapping effect
-    // We use a mix of positive and negative to make some go UP and some go DOWN
-    const uniqueSpeeds = [650, -150, 450, -300, 550, 200, -400];
+    // Target positions for each item
+    let targetY = Array.from(items).map(() => 0);
+    // Current positions (for smoothing)
+    let currentY = Array.from(items).map(() => 0);
+    
+    const speeds = [500, -120, 350, -250, 450, 150, -350];
+    const smoothness = 0.1; // Lower = smoother/heavier, Higher = snappier
 
-    const handleParallax = () => {
+    const updateCalculations = () => {
         const rect = section.getBoundingClientRect();
         const winH = window.innerHeight;
 
-        // Active zone: from when the top enters to when the bottom leaves
         if (rect.top < winH && rect.bottom > 0) {
-            // progress: 0 (top of section at bottom of screen) to 1 (bottom of section at top)
             const progress = (winH - rect.top) / (winH + rect.height);
-
-            items.forEach((item, index) => {
-                const speed = uniqueSpeeds[index % uniqueSpeeds.length];
-                
-                // The 'Magic' Math: 
-                // We multiply by (progress - 0.5) to ensure they move 
-                // across their 'base' CSS position exactly at the middle of the scroll.
-                const yOffset = (progress - 0.5) * -speed;
-                
-                // Applying 3D transform for hardware acceleration (no lag)
-                item.style.transform = `translate3d(0, ${yOffset}px, 0)`;
+            items.forEach((_, index) => {
+                const speed = speeds[index % speeds.length];
+                targetY[index] = (progress - 0.5) * -speed;
             });
         }
     };
 
-    // Listen to all scroll methods (Wheel, Touch, Scrollbar)
-    window.addEventListener('scroll', handleParallax, { passive: true });
-    
-    // Initial trigger
-    handleParallax();
+    const animate = () => {
+        items.forEach((item, index) => {
+            // The 'Lerp' formula for professional smoothing
+            currentY[index] += (targetY[index] - currentY[index]) * smoothness;
+            item.style.transform = `translate3d(0, ${currentY[index]}px, 0)`;
+        });
+        requestAnimationFrame(animate);
+    };
+
+    window.addEventListener('scroll', updateCalculations, { passive: true });
+    animate(); 
 });
 
 // alert('During this week, 9 March 2026, Iam updating the website design')

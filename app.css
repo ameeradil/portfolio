@@ -412,7 +412,7 @@ h2::before{
 .projects-parallax-section {
     position: relative;
     margin-top: 12.5rem; 
-    padding: 10rem 0 30rem 0; /* Huge bottom padding for the 'drop' */
+    padding: 5rem 0 15rem 0; /* Tightened padding */
     overflow: hidden;
     background: transparent;
 }
@@ -420,33 +420,20 @@ h2::before{
 /* Identical to Skills Header */
 .projects-first-line {
     display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 5rem;
-    padding-left: 2rem;
-}
-
-.yellow-triangle {
-    width: 0; height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 18px solid #FFAD1F;
-    transform: rotate(90deg);
+    margin-bottom: 3rem;
 }
 
 .projects-first-line h2 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: white;
     margin: 0;
+    font-size: 3.5rem; /* Ensure this matches your global h2 exactly */
 }
 
-/* --- THE FLOATING CONTAINER --- */
+/* --- THE TIGHTER CONTAINER --- */
 .parallax-container {
     position: relative;
     width: 100%;
-    height: 160rem; /* Very tall to allow projects to 'race' past each other */
-    max-width: 1200px;
+    height: 90rem; /* Shorter container for higher density */
+    max-width: 1000px; /* Narrower to force more overlapping */
     margin: 0 auto;
 }
 
@@ -455,14 +442,13 @@ h2::before{
     display: block;
     text-decoration: none;
     will-change: transform;
-    /* NO transition here! Scroll movement must be raw and immediate */
     z-index: 1;
 }
 
-/* Layer Logic */
-.layer-front { width: 48rem; z-index: 50; }
-.layer-mid   { width: 36rem; z-index: 30; }
-.layer-back  { width: 28rem; z-index: 10; opacity: 0.6; }
+/* Slightly smaller widths to fit the tighter container */
+.layer-front { width: 42rem; z-index: 50; }
+.layer-mid   { width: 32rem; z-index: 30; }
+.layer-back  { width: 24rem; z-index: 10; opacity: 0.6; }
 
 /* --- THE CARD --- */
 .project-card {
@@ -471,19 +457,18 @@ h2::before{
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: #0d0d0d;
-    /* This transition is ONLY for the hover lift */
-    transition: transform 0.4s cubic-bezier(0.2, 1, 0.2, 1), 
-                box-shadow 0.4s ease, 
-                border-color 0.4s ease;
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.2, 1), 
+                box-shadow 0.5s ease, 
+                border-color 0.5s ease;
 }
 
-/* Hover: Lift project and bring to absolute front */
 .parallax-item:hover { z-index: 100; }
 
+/* Elegant lift effect */
 .parallax-item:hover .project-card {
-    transform: translateY(-20px) scale(1.03);
-    border-color: rgba(255, 173, 31, 0.6);
-    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.9);
+    transform: translateY(-12px) scale(1.02);
+    border-color: rgba(255, 173, 31, 0.5);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9);
 }
 
 .project-card img {
@@ -491,11 +476,11 @@ h2::before{
     height: auto;
     display: block;
     filter: grayscale(20%);
-    transition: transform 0.8s ease;
+    transition: transform 1s ease;
 }
 
 .parallax-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.08);
     filter: grayscale(0%);
 }
 
@@ -503,15 +488,15 @@ h2::before{
 .project-overlay {
     position: absolute;
     bottom: 0; left: 0; width: 100%;
-    padding: 2.5rem;
-    background: linear-gradient(to top, rgba(0,0,0,1) 0%, transparent 100%);
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 100%);
 }
 
 .project-overlay h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 500;
     margin: 0;
-    color: rgba(255, 255, 255, 0.7); /* Professional 70% White */
+    color: rgba(255, 255, 255, 0.7); 
     transition: color 0.4s ease;
 }
 
