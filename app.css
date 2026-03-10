@@ -122,19 +122,19 @@ h2::before{
 .hero-section {
     position: relative;
     margin-top: 4rem;
-    min-height: 80rem;
+    /* REDUCED: from 80rem to 65rem to tighten the section */
+    min-height: 65rem; 
     display: flex;
-    /* Changed from center to flex-start to allow manual top positioning */
     align-items: flex-start; 
 }
 
 .hero-layout {
     display: grid;
-    /* Use minmax to allow columns to shrink on smaller 'desktop' views */
     grid-template-columns: minmax(10rem, 17.6rem) 1fr minmax(20rem, 48.2rem);
     width: 100%;
     align-items: stretch; 
-    height: 70rem; 
+    /* REDUCED: from 70rem to 55rem */
+    height: 55rem; 
 }
 /* 2. Decorative Background Lines */
 .line-container {
@@ -150,7 +150,8 @@ h2::before{
 .v-line {
     position: absolute;
     width: 1px;
-    height: 67rem; /* Changed from 70% to match the sidebar */
+    /* MATCHED: Exactly to the new hero-layout height */
+    height: 55rem; 
     background-color: rgba(255, 255, 255, 0.2);
 }
 .v-1 { left: 0; }
@@ -161,7 +162,7 @@ h2::before{
 
 .h-1 {
     position: absolute;
-    /* Aligns specifically under the buttons in the third column */
+    /* ADJUSTED: Kept relative to the top to stay under the buttons */
     top: 29rem; 
     right: 0;
     width: 48.2rem; 
@@ -172,16 +173,11 @@ h2::before{
 
 .v-stem {
     position: absolute;
-    /* Starts exactly where your h-1 line is positioned */
     top: 29rem; 
-    /* Centers it horizontally relative to the 48.2rem wide container */
-    /* Right v-5 is at 0, so middle is half of 48.2rem */
     right: 35rem; 
-    
     width: 1px;
-    /* Ensures it goes all the way to the bottom of the hero-section */
-    height: 37rem; 
-    
+    /* REDUCED: Calculated to end exactly at the section bottom (65 - 29 = 36) */
+    height: 20rem; 
     background-color: rgba(255, 255, 255, 0.2);
     z-index: 1;
 }
@@ -190,8 +186,8 @@ h2::before{
 /* 3. Left Sidebar - Vertical Text Anchored to Bottom */
 .hero-left-sidebar {
     display: flex;
-    /* Match the 70% height of your .v-line exactly */
-    height: 70rem; 
+    /* MATCHED: 55rem height of the v-lines */
+    height: 55rem; 
     position: relative;
     z-index: 5;
 }
@@ -200,11 +196,9 @@ h2::before{
     width: 8.8rem;
     display: flex;
     flex-direction: column;
-    /* This pushes the text to the very bottom of the 70rem line */
     justify-content: flex-end; 
     align-items: center;
-    /* Space from the bottom tip of the line */
-    padding-bottom: 4rem; 
+    padding-bottom: 3rem; /* Slightly reduced padding for the shorter height */
     height: 100%; 
 }
 
@@ -238,9 +232,10 @@ h2::before{
 .hero-image-area {
     display: flex;
     justify-content: center;
-    padding: 0 8rem;
+    padding: 0 4rem; /* Reduced padding slightly to avoid crushing the image */
     
-    /* ADD THIS LINE: Centers the photo vertically in the 80rem section */
+    /* This ensures that even though the grid is 55rem, 
+       the photo centers itself in the 65rem section height */
     align-self: center; 
 }
 
@@ -330,7 +325,7 @@ h2::before{
     
     /* 3. SPACING: margin-top moves it below the h-1 line (at top: 29rem) */
     /* Since buttons have margin-bottom: 4rem, this provides a professional gap */
-    margin-top: 6rem; 
+    margin-top: 2.5rem; 
     
     /* 4. TYPOGRAPHY: Matches your main description paragraph */
     font-size: 1.6rem; 
