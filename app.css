@@ -420,7 +420,7 @@ h2::before{
 .projects-first-line {
     display: flex;
     margin-bottom: 4rem;
-    padding-left: 2rem;
+    padding-left: 0rem;
 }
 
 .projects-first-line h2 {
