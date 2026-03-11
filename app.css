@@ -408,32 +408,32 @@ h2::before{
     border-color: white;
 }
 /* Projects Section */
-/* --- SECTION --- */
 .projects-parallax-section {
     position: relative;
-    margin-top: -2.5rem; 
-    padding: 5rem 0 15rem 0; /* Tightened padding */
+
+    margin-top: 1.5rem; 
+    padding: 2rem 0 4rem 0; 
     overflow: hidden;
     background: transparent;
 }
 
-/* Identical to Skills Header */
 .projects-first-line {
     display: flex;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+    padding-left: 2rem;
 }
 
 .projects-first-line h2 {
     margin: 0;
-    font-size: 3.5rem; /* Ensure this matches your global h2 exactly */
+    font-size: 3.5rem;
+    color: white;
 }
 
-/* --- THE TIGHTER CONTAINER --- */
 .parallax-container {
     position: relative;
     width: 100%;
-    height: 90rem; /* Shorter container for higher density */
-    max-width: 1000px; /* Narrower to force more overlapping */
+    height: 80rem; 
+    max-width: 1000px; 
     margin: 0 auto;
 }
 
@@ -442,21 +442,20 @@ h2::before{
     display: block;
     text-decoration: none;
     will-change: transform;
-    z-index: 1;
 }
 
-/* Slightly smaller widths to fit the tighter container */
-.layer-front { width: 42rem; z-index: 50; }
-.layer-mid   { width: 32rem; z-index: 30; }
-.layer-back  { width: 24rem; z-index: 10; opacity: 0.6; }
+/* Layer Widths & Depths */
+.layer-front { width: 40rem; z-index: 50; }
+.layer-mid   { width: 30rem; z-index: 30; }
+.layer-back  { width: 22rem; z-index: 10; opacity: 0.5; }
 
-/* --- THE CARD --- */
 .project-card {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     background: #0d0d0d;
+    /* Hover Transition only */
     transition: transform 0.5s cubic-bezier(0.2, 1, 0.2, 1), 
                 box-shadow 0.5s ease, 
                 border-color 0.5s ease;
@@ -464,44 +463,37 @@ h2::before{
 
 .parallax-item:hover { z-index: 100; }
 
-/* Elegant lift effect */
 .parallax-item:hover .project-card {
-    transform: translateY(-12px) scale(1.02);
+    transform: translateY(-10px) scale(1.02);
     border-color: rgba(255, 173, 31, 0.5);
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
 }
 
 .project-card img {
     width: 100%;
     height: auto;
     display: block;
-    filter: grayscale(20%);
-    transition: transform 1s ease;
+    filter: grayscale(30%);
+    transition: transform 0.8s ease, filter 0.8s ease;
 }
 
 .parallax-item:hover img {
-    transform: scale(1.08);
+    transform: scale(1.07);
     filter: grayscale(0%);
 }
 
-/* --- TEXT OVERLAY (70% White) --- */
 .project-overlay {
     position: absolute;
     bottom: 0; left: 0; width: 100%;
-    padding: 2rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 100%);
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent 100%);
 }
 
 .project-overlay h3 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 500;
     margin: 0;
-    color: rgba(255, 255, 255, 0.7); 
-    transition: color 0.4s ease;
-}
-
-.parallax-item:hover .project-overlay h3 {
-    color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Skills Section */

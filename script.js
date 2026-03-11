@@ -69,13 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.parallax-item');
     if (!section || items.length === 0) return;
 
-    // Target positions for each item
     let targetY = Array.from(items).map(() => 0);
-    // Current positions (for smoothing)
     let currentY = Array.from(items).map(() => 0);
     
-    const speeds = [500, -120, 350, -250, 450, 150, -350];
-    const smoothness = 0.1; // Lower = smoother/heavier, Higher = snappier
+    // Mix of High and Low speeds to create 'bombing' effect
+    const speeds = [550, -150, 300, 480, -200, 180, 520];
+    const smoothness = 0.08; // Slightly lower for a 'heavier' professional feel
 
     const updateCalculations = () => {
         const rect = section.getBoundingClientRect();
@@ -91,15 +90,22 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const animate = () => {
+        let isMoving = false;
         items.forEach((item, index) => {
-            // The 'Lerp' formula for professional smoothing
-            currentY[index] += (targetY[index] - currentY[index]) * smoothness;
-            item.style.transform = `translate3d(0, ${currentY[index]}px, 0)`;
+            const diff = targetY[index] - currentY[index];
+            
+            // Only update if the difference is noticeable
+            if (Math.abs(diff) > 0.01) {
+                currentY[index] += diff * smoothness;
+                item.style.transform = `translate3d(0, ${currentY[index]}px, 0)`;
+                isMoving = true;
+            }
         });
         requestAnimationFrame(animate);
     };
 
     window.addEventListener('scroll', updateCalculations, { passive: true });
+    updateCalculations(); // Initial set
     animate(); 
 });
 
