@@ -497,27 +497,101 @@ h2::before{
 }
 
 /* Skills Section */
-.skills-section{
-    margin-top: 12.5rem;
+.skills-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 5rem;
+    padding: 2.5rem 0;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
-.skills-first-line{
+.skills-track {
     display: flex;
+    width: max-content;
+    gap: 2rem;
+    animation: scroll-left 40s linear infinite;
 }
 
-.skills-content{
+.skill-pill {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 1.2rem;
+    background: #0d0d0d;
+    border: 1px solid #1a1a1a;
+    padding: 0.8rem 2.2rem;
+    border-radius: 10px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    cursor: default;
 }
 
-.skills-img{
-  max-width: 601px;
-  width: 100%;
+/* --- THE ICONS --- */
+.skill-pill i, .webflow-icon {
+    font-size: 2.2rem; /* Matches your 48px icons */
+    color: #444; /* Initial professional gray */
+    transition: all 0.3s ease;
 }
 
-.skills-skills {
-  max-width: 282px;
-  width: 100%;
+.skill-pill:hover {
+    border-color: #FFAD1F;
+    background: #121212;
+    transform: translateY(-5px);
+}
+
+/* THE MAGIC HOVER: This gives back the official brand color */
+.skill-pill:hover .devicon-python-plain { color: #3776AB; }
+.skill-pill:hover .devicon-java-plain { color: #007396; }
+.skill-pill:hover .devicon-kotlin-plain { color: #7F52FF; }
+.skill-pill:hover .devicon-javascript-plain { color: #F7DF1E; }
+.skill-pill:hover .devicon-html5-plain { color: #E34F26; }
+.skill-pill:hover .devicon-css3-plain { color: #1572B6; }
+.skill-pill:hover .devicon-postgresql-plain { color: #336791; }
+.skill-pill:hover .devicon-nodejs-plain { color: #339933; }
+.skill-pill:hover .devicon-express-original { color: #fff; }
+.skill-pill:hover .devicon-linux-plain { color: #FCC624; }
+.skill-pill:hover .devicon-amazonwebservices-plain-wordmark { color: #FF9900; }
+.skill-pill:hover .devicon-git-plain { color: #F05032; }
+.skill-pill:hover .devicon-mongodb-plain { color: #4DB33D; }
+.skill-pill:hover .devicon-github-original { color: #fff; }
+.skill-pill:hover .devicon-figma-plain { color: #F24E1E; }
+.skill-pill:hover .webflow-icon { color: #4353FF; }
+.skill-pill:hover .devicon-tailwindcss-original { color: #06B6D4; }
+.skill-pill:hover .devicon-bootstrap-plain { color: #7952B3; }
+
+/* Text Label */
+.skill-pill span {
+    color: #555;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.skill-pill:hover span {
+    color: #fff;
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Update these specific hover rules */
+
+/* Node.js Official Green */
+.skill-pill:hover .devicon-nodejs-plain-wordmark { 
+    color: #339933; 
+}
+
+/* Webflow Official Blue */
+.skill-pill:hover .webflow-icon { 
+    color: #4353FF; 
+}
+
+/* Optional: If you want the 'W' to be slightly larger to match Node.js visual weight */
+.webflow-icon {
+    width: 34px;
+    height: 34px;
 }
 
 
