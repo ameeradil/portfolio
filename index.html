@@ -43,7 +43,7 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#education">Education</a></li>
+
 
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -266,53 +266,67 @@
 
             </div>
             </section>
+        
+<section class="contact-section" id="contact">
+    <div class="skills-first-line">
+        <h2>Contact</h2>
+    </div>
 
-            <!-- Education Section -->
-            <section class="education-section" id="education">
-                <div class="education-first-line">
-                    <h2>Education</h2>
+    <div class="contact-terminal">
+        <div class="terminal-container">
+            <header class="terminal-header">
+                <div class="terminal-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
                 </div>
+                <div class="terminal-title">Open for Projects, collaboration and jobs</div>
+            </header>
 
+            <div class="terminal-body-wrapper">
+                <form action="https://formspree.io/f/xlgpnerq" method="POST" class="terminal-form" id="contact-form">
+                    <div class="input-grid">
+                        <div class="field-wrapper">
+                            <label for="name">NAME</label>
+                            <input type="text" name="name" id="name" required >
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="email">EMAIL</label>
+                            <input type="email" name="email" id="email" required >
+                        </div>
+                    </div>
 
-                <article class="khartoum">
-                    <h5>Khartoum University - Sudan</h5>
-                    <p class="education-text">Studies were discontinued when the university closed due to political unrest</p>
-                </article>
-                <article>
-                    <h5>Alfath boys - Sudan</h5>
-                    <p class="education-date">91.3%</p>
-                    <p class="education-text">High school diploma<br>Grade averages always above 90%</p>
-                </article>
-                    <h5>Al Islah Algadeedah - Sudan</h5>
-                    <p class="education-date">96.4%</p>
-                    <p class="education-text">Basic Education<br>Top 100 statewide. Ranked second in the School</p>
-                </article>
-            </section>
-        </main>
+                    <div class="field-wrapper full-width">
+                        <label for="message">MESSAGE_BODY</label>
+                        <textarea name="message" id="message" rows="4" required placeholder="Define the scope of the architectural challenge..."></textarea>
+                    </div>
 
-        <!-- Contact Section -->
-        <footer class="footer" id="contact">
-                <div class="contact-first-line">
-                    <h2>Contact</h2>
+                    <div class="terminal-actions">
+                        <button type="submit" class="submit-trigger">
+                            <span class="btn-text">RUN_TRANSMIT</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                        
+                        <div class="terminal-socials">
+                            <a href="https://github.com/ameeradil" target="_blank"><img src="assets/github.svg" alt=""></a>
+                            <a href="mailto:eltaibameer@gmail.com"><img src="assets/gmail.svg" alt=""></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="terminal-status-bar">
+                <div class="status-left">
+                    <span class="status-mode">INSERT</span>
+                    <span class="status-path">UTF-8 // SECURE_SOCKET</span>
                 </div>
-
-                <div class="footer-content">
-                    <p class="footer-paragraph">Open for Projects & Jobs:</p>
-                    <ul class="icons-flex">
-                        <li><a href="https://www.linkedin.com/in/eltaib-ameer" target="_blank"><img src="assets/linkedin.svg" alt="Ameer Eltaib LinkedIn Profile"></a></li>
-                        <li><a href="https://github.com/ameeradil" target="_blank"><img src="assets/github.svg" alt="Ameer Eltaib Github Profile"></a></li>
-                        <li>
-                            <a href="mailto:ameer.adil.sd@gmail.com" target="_blank">
-                                <img src="assets/gmail.svg" alt="Ameer Eltaib Gmail account">
-                            </a>
-                        </li>
-
-
-                    </ul>
-                    <p class="closing-sentence">© 2026 eltaib | All rights reserved</p>
+                <div class="status-right">
+                    <span class="status-copyright">© 2026 ELTAIB.SYS</span>
                 </div>
-
-        </footer>
+            </div>
+        </div>
+    </div>
+</section>
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>

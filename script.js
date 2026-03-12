@@ -215,4 +215,69 @@ document.addEventListener('DOMContentLoaded', () => {
     Runner.run(Runner.create(), engine);
 });
 
-// alert('During this week, 9 March 2026, Iam updating the website design')
+//Contact Section
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contact-form');
+    const terminalBody = document.querySelector('.terminal-body-wrapper');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const btn = contactForm.querySelector('.submit-trigger');
+            const btnText = btn.querySelector('.btn-text');
+            const formData = new FormData(contactForm);
+
+            // Interface State: Executing
+            btnText.innerText = "EXECUTING...";
+            btn.style.opacity = "0.7";
+            btn.style.pointerEvents = "none";
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    // Reset form data
+                    contactForm.reset();
+                    
+                    // Success View
+                    terminalBody.style.transition = 'opacity 0.4s ease';
+                    terminalBody.style.opacity = '0';
+                    
+                    setTimeout(() => {
+                        terminalBody.innerHTML = `
+                            <div class="success-screen" style="text-align: center; padding: 8rem 2rem; animation: fadeIn 0.5s ease-out forwards;">
+                                <h3 style="color: #FFD700; font-family: monospace; font-size: 2.4rem; margin-bottom: 1rem;">[SUCCESS] DATA_TRANSMITTED</h3>
+                                <p style="color: rgba(255,255,255,0.6); font-size: 1.4rem; margin-bottom: 3rem;">The packet has been successfully routed to the destination server.</p>
+                                <button onclick="location.reload()" style="background: transparent; border: 1px solid #FFD700; color: #FFD700; padding: 1rem 2rem; cursor: pointer; font-family: monospace;">REBOOT_SESSION</button>
+                            </div>
+                        `;
+                        terminalBody.style.opacity = '1';
+                    }, 400);
+                } else {
+                    throw new Error();
+                }
+            } catch (err) {
+                btnText.innerText = "RETRY_PROTOCOL";
+                btn.style.opacity = "1";
+                btn.style.pointerEvents = "all";
+            }
+        });
+    }
+});
+
+// Animation Keyframes
+const styleSheet = document.createElement("style");
+styleSheet.innerText = `
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+`;
+document.head.appendChild(styleSheet);
+
+alert('During this week, 9 March 2026, Iam updating the website design')
