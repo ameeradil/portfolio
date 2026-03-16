@@ -280,4 +280,4 @@ styleSheet.innerText = `
 `;
 document.head.appendChild(styleSheet);
 
-alert('During this week, 9 March 2026, Iam updating the website design')
+// alert('During this week, 9 March 2026, Iam updating the website design')

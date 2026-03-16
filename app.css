@@ -586,7 +586,7 @@ h2::before{
 .skill-pill span {
     color: #d3caca;
     font-size: 1.3rem;
-    font-weight: 600; /* Fixed bug */
+    font-weight: 500; /* Fixed bug */
     letter-spacing: 0.5px;
 }
 
