@@ -410,7 +410,6 @@ h2::before{
 /* Projects Section */
 .projects-parallax-section {
     position: relative;
-
     margin-top: 1.5rem; 
     padding: 2rem 0 4rem 0; 
     overflow: hidden;
@@ -455,7 +454,6 @@ h2::before{
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: #0d0d0d;
-    /* Hover Transition only */
     transition: transform 0.5s cubic-bezier(0.2, 1, 0.2, 1), 
                 box-shadow 0.5s ease, 
                 border-color 0.5s ease;
