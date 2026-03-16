@@ -726,209 +726,153 @@ h2 {
     color: #ffffff;
 }
 
-
-
-/* Education Section */
-.education-section{
-    margin-top: 12.5rem;
-}
-
-.education-first-line{
-    display: flex;
-    margin-bottom: 2.5rem;
-}
-
-h5{
-    color: white;
-    font-size: 2.8rem;
-    font-weight: 500;
-}
-
-.education-date{
-    color: #71767B;
-    font-size: 1.8rem;
-}
-
-.education-text{
-    font-size: 1.8rem;
-    color: white;
-}
-
-.narxoz{
-    margin-bottom: 4.5rem;
-}
-
-.farabi{
-    margin-bottom: 4.5rem;
-}
-
-.khartoum{
-    margin-bottom: 4.5rem;
-}
-
-
-button {
-    background-color: transparent;
-    color: white; 
-    border: thin solid #71767B;
-    padding: 0.8rem 1.5rem;
-    font-size: 1.6rem;
-    font-weight: 500;
-    border-radius: 0.5rem; 
-    cursor: pointer; 
-    width: 100%;          /* makes the button stretch the container */
-    box-sizing: border-box; /* ensures padding is included in width */
-    text-align: center;   /* centers the text inside the button */
-}
-
-/* Reusable hover animation */
-.hover-animate {
-    transition: 
-        transform 0.3s ease,
-        filter 0.3s ease;
-}
-
-/* Hover effect */
-.hover-animate:hover {
-    transform: translateY(-6px) scale(1.15);
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
-}
-
 /* --- Unconventional, Professional Footer Design --- */
 /* --- Terminal System Layout --- */
+/* ========================= */
+/* Contact Section */
+/* ========================= */
 .contact-section {
-    margin-top: 10rem;
-    padding-bottom: 5rem;
-}
-
-.contact-terminal {
-    max-width: 90rem;
-    margin: 4rem auto;
-    padding: 0 2rem;
-}
-
-.terminal-container {
+    padding: 8rem 2rem 4rem;
     background: #0f0f0f;
-    border: 1px solid rgba(255, 215, 0, 0.2);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* --- Header & Control Dots --- */
-.terminal-header {
-    background: #1a1a1a;
-    padding: 1.2rem 2rem;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+.contact-header {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    text-align: center;
 }
 
-.terminal-dots { display: flex; gap: 8px; }
-.dot { width: 12px; height: 12px; border-radius: 50%; }
-.red { background: #ff5f56; }
-.yellow { background: #ffbd2e; }
-.green { background: #27c93f; }
-
-.terminal-title {
-    margin-left: 2rem;
-    font-family: 'Courier New', monospace;
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.4);
-    letter-spacing: 1px;
+.contact-header h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
-/* --- Form Architecture --- */
-.terminal-form { padding: 4rem; }
+.contact-header p {
+    font-size: 1.5rem;
+    color: #bbb;
+}
 
+/* Form Container */
+.contact-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(18, 18, 18, 0.85);
+    padding: 3rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Grid Layout */
 .input-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    margin-bottom: 3rem;
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
-.field-wrapper { display: flex; flex-direction: column; gap: 0.8rem; }
+.field-wrapper {
+    display: flex;
+    flex-direction: column;
+}
 
 .field-wrapper label {
-    font-family: 'Courier New', monospace;
-    font-size: 1rem;
+    font-weight: 600;
+    font-size: 1.2rem;
     color: #FFD700;
-    letter-spacing: 2px;
-    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
 }
 
 .field-wrapper input,
 .field-wrapper textarea {
     background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    font-size: 1.4rem;
     color: #fff;
-    font-size: 1.6rem;
-    font-family: 'Poppins', sans-serif;
     transition: all 0.3s ease;
 }
 
 .field-wrapper input:focus,
 .field-wrapper textarea:focus {
     outline: none;
-    border-bottom: 1px solid #FFD700;
+    border-color: #FFD700;
 }
 
-/* --- Action Bar & Socials --- */
-.terminal-actions {
+/* Full width text area */
+.full-width textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+/* Form Actions */
+.form-actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
-.submit-trigger {
+.submit-btn {
     background: #FFD700;
-    color: #000;
+    color: #000000f3;
     border: none;
-    padding: 1.4rem 3.5rem;
-    font-family: 'Courier New', monospace;
-    font-weight: 900;
+    padding: 1rem 2.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-radius: 8px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    margin-top: 1.6rem;
+    width: 100%;
 }
 
-.submit-trigger:hover {
-    background: #fff;
+.submit-btn:hover {
+    background: #ffd900c7;
     transform: translateY(-2px);
 }
 
-.terminal-socials { display: flex; gap: 2rem; }
-.terminal-socials a {
-    font-family: 'Courier New', monospace;
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.4);
-    text-decoration: none;
-    transition: 0.3s;
-}
 
-.terminal-socials a:hover { color: #FFD700; }
-
-/* --- The Modern Status Footer --- */
-.terminal-status-bar {
-    background: #FFD700;
-    padding: 0.6rem 2rem;
+/* Social Links */
+.contact-socials {
     display: flex;
-    justify-content: space-between;
-    font-family: 'Courier New', monospace;
-    font-size: 1rem;
-    font-weight: 900;
-    color: #000;
+    gap: 1.5rem;
+    align-items: center;
 }
 
-.status-path { margin-left: 2rem; opacity: 0.6; font-weight: 400; }
+.contact-socials img {
+    width: 36px;
+    height: 36px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
 
+.contact-socials img:hover {
+    filter: none;
+    transform: scale(1.1);
+}
+
+/* Footer */
+.contact-footer {
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #888;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    .input-grid { grid-template-columns: 1fr; }
-    .terminal-actions { flex-direction: column; gap: 2rem; align-items: flex-start; }
+    .input-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

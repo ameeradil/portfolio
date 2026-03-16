@@ -230,9 +230,7 @@
 </section>
 
             <!-- Certification Section -->
-               <div class="certifications-first-line">
-    <h2>Certification</h2>
-  </div>
+             
 <section class="certifications-section" id="certifications">
 
   <div class="certifications-first-line">
@@ -297,66 +295,39 @@
 
   </div>
 </section>
-        
+
+<!-- Contact and the footer -->
 <section class="contact-section" id="contact">
-    <div class="skills-first-line">
+    <div class="contact-header">
         <h2>Contact</h2>
+        <p>Open for projects, collaboration, and job inquiries.</p>
     </div>
 
-    <div class="contact-terminal">
-        <div class="terminal-container">
-            <header class="terminal-header">
-                <div class="terminal-dots">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                </div>
-                <div class="terminal-title">Open for Projects, collaboration and jobs</div>
-            </header>
-
-            <div class="terminal-body-wrapper">
-                <form action="https://formspree.io/f/xlgpnerq" method="POST" class="terminal-form" id="contact-form">
-                    <div class="input-grid">
-                        <div class="field-wrapper">
-                            <label for="name">NAME</label>
-                            <input type="text" name="name" id="name" required >
-                        </div>
-                        <div class="field-wrapper">
-                            <label for="email">EMAIL</label>
-                            <input type="email" name="email" id="email" required >
-                        </div>
-                    </div>
-
-                    <div class="field-wrapper full-width">
-                        <label for="message">MESSAGE_BODY</label>
-                        <textarea name="message" id="message" rows="4" required placeholder="Define the scope of the architectural challenge..."></textarea>
-                    </div>
-
-                    <div class="terminal-actions">
-                        <button type="submit" class="submit-trigger">
-                            <span class="btn-text">RUN_TRANSMIT</span>
-                            <span class="btn-icon">→</span>
-                        </button>
-                        
-                        <div class="terminal-socials">
-                            <a href="https://github.com/ameeradil" target="_blank"><img src="assets/github.svg" alt=""></a>
-                            <a href="mailto:eltaibameer@gmail.com"><img src="assets/gmail.svg" alt=""></a>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            
-            <div class="terminal-status-bar">
-                <div class="status-left">
-                    <span class="status-mode">INSERT</span>
-                    <span class="status-path">UTF-8 // SECURE_SOCKET</span>
-                </div>
-                <div class="status-right">
-                    <span class="status-copyright">© 2026 ELTAIB.SYS</span>
-                </div>
-            </div>
-        </div>
+    <div class="contact-container">
+<form action="https://formspree.io/f/xlgpnerq" method="POST" id="contact-form">
+  <div class="input-grid">
+    <div class="field-wrapper">
+      <label for="name">NAME</label>
+      <input type="text" name="name" id="name" required placeholder="Full Name">
     </div>
+    <div class="field-wrapper">
+      <label for="email">EMAIL</label>
+      <input type="email" name="email" id="email" required placeholder="example@gmail.com">
+    </div>
+  </div>
+
+  <div class="field-wrapper full-width">
+    <label for="message">MESSAGE_BODY</label>
+    <textarea name="message" id="message" rows="4" required placeholder="Type your message ..."></textarea>
+  </div>
+
+  <button type="submit" class="submit-btn">Send Message</button>
+</form>
+    </div>
+
+    <footer class="contact-footer">
+        <p>© 2026 Eltaib — All rights reserved</p>
+    </footer>
 </section>
 
     </div>
