@@ -599,6 +599,9 @@ h2::before{
 
 
 /* Certifications Section */
+/* ========================= */
+/* Certifications Section */
+/* ========================= */
 .certifications-section {
     margin-top: 12.5rem;
 }
@@ -606,112 +609,92 @@ h2::before{
 /* Header line */
 .certifications-first-line {
     display: flex;
+    justify-content: flex-start; /* Left-aligned */
     margin-bottom: 2.5rem;
 }
 
 /* Section text */
-h4 {
-    font-size: 2rem;
-    font-weight: 500;
+h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
     color: white;
-    text-align: center;
-    margin: 1rem 0;
+    margin: 0;
 }
 
-.certification-section {
-    max-width: 1200px;
-    margin: 8rem auto;
-    padding: 0 2rem;
-}
-
-.section-title {
-    font-size: 2.8rem;
-    margin-bottom: 3rem;
-}
-
-/* Grid */
 .certification-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr));
     gap: 2.4rem;
 }
 
-/* ========================= */
-/* UPDATED: Glass Card Style */
-/* ========================= */
+/* Glass Card Style */
 .cert-card {
     height: 40rem;
     padding: 2.8rem;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    /* AI-style glass background */
     background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.08),
-            rgba(255, 255, 255, 0.02)
-        ),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
         rgba(18, 18, 18, 0.55);
-
     backdrop-filter: blur(18px) saturate(130%);
     -webkit-backdrop-filter: blur(18px) saturate(130%);
-
     border-radius: 16px;
-
     border: 1px solid rgba(255, 255, 255, 0.12);
-
-    box-shadow:
-        0 8px 24px rgba(0, 0, 0, 0.45),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border 0.35s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
 }
-.cert-card:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 16px 40px rgba(0, 0, 0, 0.55),
-        inset 0 1px 0 rgba(255, 255, 255, 0.12);
-
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
 
 .cert-card:hover {
     transform: translateY(-0.6rem);
     background: rgba(18, 18, 18, 0.85);
     border-color: rgba(255, 255, 255, 0.16);
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6);
 }
 
 /* ================= */
 /* Icon container */
 /* ================= */
 .icon {
-    width: 28rem;
-    height: 19rem;
-    border-radius: 1rem;
-    overflow: hidden;
-
+    width: 100%;
+    max-width: 200px; /* initial size */
+    aspect-ratio: 1 / 1; /* maintain square */
+    margin: 0 auto; /* center horizontally */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Icon image */
-.cert-img {
-    width: 70%;
-    transition: transform 0.3s ease;
+/* Icon styling */
+.icon svg {
+    width: 100%;
+    height: auto;
+    fill: #71767B; /* initial gray color */
+    transition: fill 0.3s ease, transform 0.3s ease;
 }
 
-.cert-card:hover .cert-img {
-    transform: scale(1.08);
+.cert-card:hover .icon svg {
+    transform: scale(1.05);
+}
+
+/* Individual icon hover colors */
+.cert-card:hover .icon--kotlin svg {
+    fill: #7F52FF;
+}
+.cert-card:hover .icon--python svg {
+    fill: #FFD43B;
+}
+.cert-card:hover .icon--html svg {
+    fill: #E34F26;
+}
+.cert-card:hover .icon--mysql svg {
+    fill: #00758F;
+}
+.cert-card:hover .icon--tensorflow svg {
+    fill: #FF6F00;
+}
+.cert-card:hover .icon--google svg {
+    fill: gold;
 }
 
 /* ================= */
@@ -721,6 +704,8 @@ h4 {
     font-size: 1.6rem;
     line-height: 1.5;
     color: #e6e6e6;
+    text-align: center;
+    margin: 1.5rem 0 0.5rem;
 }
 
 /* ================= */
@@ -730,17 +715,16 @@ h4 {
     font-size: 1.4rem;
     color: #9ca3af;
     text-decoration: none;
-
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding-top: 1.4rem;
-
+    display: block;
+    text-align: center;
     transition: color 0.3s ease;
 }
 
 .cert-card a:hover {
     color: #ffffff;
 }
-
 
 
 

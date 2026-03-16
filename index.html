@@ -3,15 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Add in <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/fav-icon-32.svg">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="queries.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <!-- Title & Meta -->
     <title>Eltaib Ameer | Portfolio</title>
-    <meta name="description" content="Ameer Eltaib - Computer Science student and web developer. Explore my projects, skills, certifications, and education in web development, AI, and app development.">
-        <script type="application/ld+json">
+    <meta name="description" content="Portfolio of Ameer Eltaib – Web & App Developer exploring AI, databases, frontend, and backend projects.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ameer Eltaib | Web Developer & AI Projects Portfolio">
+    <meta property="og:description" content="Explore my projects, skills, and certifications in web and AI development. Open for freelance projects and collaboration.">
+    <meta property="og:url" content="https://eltaib.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
@@ -20,23 +39,17 @@
       "sameAs": [
         "https://github.com/ameeradil",
         "https://linkedin.com/in/ameeradil"
-      ],
+      ]
     }
     </script>
-    <meta property="og:title" content="Ameer Eltaib | Web Developer & AI Projects Portfolio">
-    <meta property="og:description" content="Explore my projects, skills, and certifications in web and AI development. Open for freelance projects and collaboration.">
-    <meta property="og:url" content="https://eltaib.com/">
-    <meta property="og:type" content="website">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-<script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-icons@11.10.0/index.min.js"></script>
+
+    <!-- Icon Libraries -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-icons@11.10.0/index.min.js"></script>
 </head>
 <body>
 
     <div class="main-container">
-            <!-- Navigation -->
              <nav class="navbar">
                 <a href="index.html" class="beta"><img src="assets/logo.svg" alt="Ameer Eltaib Portfolio Logo"></a>
                 <ul class="nav-container">
@@ -48,7 +61,6 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
              </nav>
-        <header>
              <!-- Hero section -->
             <section class="hero-section">
 <div class="line-container">
@@ -171,7 +183,6 @@
 <section class="skills-section" id="skills">
     <div class="skills-first-line">
         <h2>Skills</h2>
-    </div>
 
     <div class="skills-marquee-wrapper">
         <div class="skills-track">
@@ -219,56 +230,73 @@
 </section>
 
             <!-- Certification Section -->
-            <section class="certifications-section" id="certifications">
+               <div class="certifications-first-line">
+    <h2>Certification</h2>
+  </div>
+<section class="certifications-section" id="certifications">
 
-            <div class="certifications-first-line">
-                <h2>Certification</h2>
+  <div class="certifications-first-line">
+    <h2>Certification</h2>
+  </div>
 
-            </div>
+  <div class="certification-grid">
 
-            <div class="certification-grid">
-                <article class="cert-card">
-                <div class="icon">
-                    <img src="assets/kotlin.svg" data-hover="animated/kotlin-animated.svg" alt="kotlin logo" class="cert-img">
-                </div>
-                <h3>Android App development - Kotlin</h3>
-                <a href="Certificates/Android App Development - Kotlin.pdf" target="_blank">View Certificate</a>
-                </article>
+    <!-- Kotlin -->
+    <article class="cert-card">
+      <div class="icon">
+        <img src="assets/kotlin.svg" alt="Kotlin Certificate" class="cert-svg">
+      </div>
+      <h3>Android App development - Kotlin</h3>
+      <a href="Certificates/Android App Development - Kotlin.pdf" target="_blank">View Certificate</a>
+    </article>
 
-                <article class="cert-card">
-                <div class="icon">
-                    <img src="assets/python.svg" alt="python logo" data-hover="animated/python-animated.svg" class="cert-img">
-                </div>
-                <h3>Python</h3>
-                <a href="Certificates/Python By Udemy.pdf" target="_blank">View Certificate</a>
-                </article>
+    <!-- Python -->
+    <article class="cert-card">
+      <div class="icon">
+        <img src="assets/python.svg" alt="Python Certificate" class="cert-svg">
+      </div>
+      <h3>Python</h3>
+      <a href="Certificates/Python By Udemy.pdf" target="_blank">View Certificate</a>
+    </article>
 
-                <article class="cert-card">
-                <div class="icon">
-                    <img src="assets/web.svg" alt="web development logo" data-hover="animated/web-animated.svg" class="cert-img">
-                </div>
-                <h3>Web Design & Web Development with Figma</h3>
-                <a href="Certificates/Web development + Web design.pdf" target="_blank">View Certificate</a>
-                </article>
+    <!-- Web / JS -->
+    <article class="cert-card">
+      <div class="icon">
+        <img src="assets/web.svg" alt="Web Development Certificate" class="cert-svg">
+      </div>
+      <h3>Web Design & Web Development</h3>
+      <a href="Certificates/Web development + Web design.pdf" target="_blank">View Certificate</a>
+    </article>
 
-                <article class="cert-card">
-                <div class="icon">
-                    <img src="assets/mysql.svg" alt="mysql logo" data-hover="animated/mysql-animated.svg" class="cert-img">
-                </div>
-                <h3>Database – SQL</h3>
-                <a href="Certificates/Database-SQL .pdf" target="_blank">View Certificate</a>
-                </article>
+    <!-- Database SQL -->
+    <article class="cert-card">
+      <div class="icon">
+        <img src="assets/mysql.svg" alt="Database Certificate" class="cert-svg">
+      </div>
+      <h3>Database – SQL</h3>
+      <a href="Certificates/Database-SQL.pdf" target="_blank">View Certificate</a>
+    </article>
 
-                <article class="cert-card">
-                <div class="icon">
-                    <img src="assets/AI.svg" alt="AI logo"  data-hover="animated/AI-animated.svg"class="cert-img">
-                </div>
-                <h3>Artificial Intelligence (AI)</h3>
-                <a href="Certificates/Artificial Intelligence AI.pdf" target="_blank">View Certificate</a>
-                </article>
+    <!-- AI -->
+    <article class="cert-card">
+      <div class="icon">
+        <img src="assets/AI.svg" alt="AI Certificate" class="cert-svg">
+      </div>
+      <h3>Artificial Intelligence (AI)</h3>
+      <a href="Certificates/Artificial Intelligence AI.pdf" target="_blank">View Certificate</a>
+    </article>
 
-            </div>
-            </section>
+    <!-- Appreciation -->
+    <article class="cert-card">
+      <div class="icon">
+        <img src="" alt="" class="cert-svg">
+      </div>
+      <h3>Appreciation Certificate</h3>
+      <a href="Certificates/Appreciation Certificate.pdf" target="_blank">View Certificate</a>
+    </article>
+
+  </div>
+</section>
         
 <section class="contact-section" id="contact">
     <div class="skills-first-line">
