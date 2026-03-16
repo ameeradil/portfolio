@@ -504,8 +504,16 @@ h2::before{
 }
 
 .skills-first-line {
-    display: flex;
+    display: block; /* remove flex, we want normal block behavior */
     margin-bottom: 5rem;
+}
+
+.skills-first-line h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff; /* golden color for header */
+    margin: 0;
+    position: relative;
 }
 
 .skills-marquee-wrapper {
