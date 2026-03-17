@@ -113,6 +113,50 @@ h2::before{
     margin-bottom: 1.5rem;
 }
 
+/* ========================= */
+/* BURGER MENU */
+/* ========================= */
+
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 3rem;
+    height: 3rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 10000;
+}
+
+.burger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Animation to X */
+.burger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+.nav-container {
+    z-index: 9999;
+    right: -100vw;
+}
+
 /* Hero Section */
 
 /* ==========================================================================

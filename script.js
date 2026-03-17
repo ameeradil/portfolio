@@ -25,42 +25,52 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ============================= */
     const section = document.querySelector('.projects-parallax-section');
     const items = document.querySelectorAll('.parallax-item');
+    const container = document.getElementById('parallax-container');
 
-    if (section && items.length > 0) {
-        let targetY = Array.from(items).map(() => 0);
-        let currentY = Array.from(items).map(() => 0);
+    let targetY = Array.from(items).map(() => 0);
+    let currentY = Array.from(items).map(() => 0);
+    const speeds = [550, -150, 300, 480, -200, 180, 520];
+    const smoothness = 0.08;
 
-        const speeds = [550, -150, 300, 480, -200, 180, 520];
-        const smoothness = 0.08;
+    function updateParallax() {
+        const winW = window.innerWidth;
 
-        const updateCalculations = () => {
+        if (winW > 896 && section && items.length > 0) {
+            // Desktop: parallax active
             const rect = section.getBoundingClientRect();
             const winH = window.innerHeight;
 
             if (rect.top < winH && rect.bottom > 0) {
                 const progress = (winH - rect.top) / (winH + rect.height);
-                items.forEach((_, index) => {
-                    const speed = speeds[index % speeds.length];
-                    targetY[index] = (progress - 0.5) * -speed;
+                items.forEach((_, i) => {
+                    targetY[i] = (progress - 0.5) * -speeds[i % speeds.length];
                 });
             }
-        };
+        } else {
+            // Mobile: stop parallax, reset transforms
+            items.forEach(item => item.style.transform = 'none');
+        }
+    }
 
-        const animate = () => {
-            items.forEach((item, index) => {
-                const diff = targetY[index] - currentY[index];
+    function animateParallax() {
+        const winW = window.innerWidth;
+        if (winW > 896) {
+            items.forEach((item, i) => {
+                const diff = targetY[i] - currentY[i];
                 if (Math.abs(diff) > 0.01) {
-                    currentY[index] += diff * smoothness;
-                    item.style.transform = `translate3d(0, ${currentY[index]}px, 0)`;
+                    currentY[i] += diff * smoothness;
+                    item.style.transform = `translate3d(0, ${currentY[i]}px, 0)`;
                 }
             });
-            requestAnimationFrame(animate);
-        };
-
-        window.addEventListener('scroll', updateCalculations, { passive: true });
-        updateCalculations();
-        animate();
+            requestAnimationFrame(animateParallax);
+        }
     }
+
+    window.addEventListener('scroll', updateParallax, { passive: true });
+    window.addEventListener('resize', updateParallax);
+
+    updateParallax();
+    animateParallax();
 
     /* ============================= */
     /* Contact Form System          */
@@ -71,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-
             const btn = contactForm.querySelector('button[type="submit"]');
             const originalText = btn.innerText;
 
@@ -89,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     contactForm.reset();
-
                     formWrapper.style.transition = 'opacity 0.4s ease';
                     formWrapper.style.opacity = '0';
 
@@ -117,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.innerText = "FAILED! TRY AGAIN";
                 btn.disabled = false;
             }
-
         });
     }
 
@@ -131,5 +138,18 @@ document.addEventListener('DOMContentLoaded', () => {
         to { opacity:1; transform:translateY(0); }
     }`;
     document.head.appendChild(styleSheet);
+
+    /* ============================= */
+    /* Navbar Burger Menu           */
+    /* ============================= */
+    const burger = document.getElementById('burger-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    if(burger && navMenu){
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    }
 
 });
