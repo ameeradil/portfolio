@@ -49,32 +49,58 @@
 @media (max-width: 896px) {
 
     /* Navbar */
-    .burger {
-        display: flex;
-        position: relative;
-        z-index: 10000;
-    }
+    /* Navbar */
+.burger {
+    display: flex;
+    position: relative;
+    z-index: 10000;
+    cursor: pointer;
+}
 
-    .nav-container {
-        position: fixed;
-        top: 0;
-        right: -100vw;
-        width: 70%;
-        height: 100vh;
-        background: rgba(18, 18, 18, 0.98);
-        backdrop-filter: blur(10px);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 3rem;
-        transition: right 0.4s ease;
-        z-index: 9999;
-    }
+.nav-container {
+    position: fixed;
+    top: 0;
+    right: -100%; /* use % instead of vw */
+    width: 70%;
+    max-width: 400px; /* optional, constrain size */
+    height: 100vh;
+    overflow-y: auto; /* scroll inside menu if needed */
+    background: rgba(18, 18, 18, 0.98);
+    backdrop-filter: blur(10px);
 
-    .nav-container.active {
-        right: 0;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+    transition: right 0.4s ease;
+    z-index: 9999;
+}
+
+.nav-container.active {
+    right: 0;
+}
+
+.nav-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* make links take full container width */
+    text-align: center;
+}
+
+.nav-container li {
+    margin-bottom: 1.5rem;
+}
+
+.nav-container a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+    display: block;
+    width: 100%;
+}
 
     /* Projects Section */
     .projects-section {

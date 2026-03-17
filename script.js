@@ -152,4 +152,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    window.addEventListener('resize', () => {
+const navContainer = document.getElementById('nav-menu');
+const burger = document.getElementById('burger-btn');
+
+// Close nav by default on load
+if (window.innerWidth <= 896) {
+    navContainer.classList.remove('active');
+    burger.classList.remove('active');
+}
+
+// Reset nav on resize
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 896) {
+        navContainer.classList.remove('active');
+        burger.classList.remove('active');
+    }
+});
+});
+
 });
