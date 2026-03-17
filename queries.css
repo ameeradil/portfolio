@@ -149,4 +149,114 @@
         max-width: 50rem;
         margin: 0 auto 3rem;
     }
+    
+}
+
+/* ============================= */
+/* Hero Section Responsiveness   */
+/* ============================= */
+@media (max-width: 896px) {
+
+    /* Hide lines, sidebars, date, and languages */
+    .line-container,
+    .hero-left-sidebar {
+        display: none !important;
+    }
+
+    /* Hero Layout: Stack everything nicely */
+    .hero-section {
+        margin-top: 20rem;
+    }
+    .hero-layout {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        padding: 4rem 2rem;
+        text-align: center;
+    }
+
+    /* Hero Content Area */
+    .hero-content-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;  /* centers everything */
+        justify-content: center;
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 100rem; /* same width for all text */
+        text-align: center; /* aligns heading and paragraphs the same */
+    }
+
+    /* Heading */
+    .hero-content-area h1 {
+        font-size: 3.2rem;
+        line-height: 1.2;
+        margin: 0;
+    }
+
+    /* Paragraph */
+    .hero-description {
+        font-size: 1.6rem;
+        line-height: 1.6;
+        color: rgba(255,255,255,0.9);
+        margin: 0;
+    }
+
+    /* Subparagraph */
+.hero-sub-text {
+        display: none;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        color: rgba(255,255,255,0.7);
+        margin: 0;
+        max-width: 100rem;    /* inherit container width */
+        text-align: center; /* same alignment as main hero text */
+    }
+
+    /* Buttons stacked */
+    .hero-cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        width: 100%;
+        max-width: 100rem;
+        margin-top: 1rem;
+    }
+
+    .hero-cta-buttons a {
+        display: block;
+        text-align: center;
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+        border: 2px solid ;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .hero-cta-buttons a:hover {
+        background: #FFD700;
+        color: #0d0d0d;
+    }
+
+    /* Hero Image: scale nicely and center */
+    .hero-image-area {
+        width: 100%;
+        max-width: 400rem;
+        margin: 0 auto;
+    }
+
+    .hero-image-area img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        display: block;
+    }
+
+    .gradient-heading{
+        text-align: left;
+    }
 }
