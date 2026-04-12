@@ -653,8 +653,14 @@ body, html {
 }
 
 @keyframes scroll-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Since you duplicated the pills in HTML, 
+           moving -50% creates the seamless loop */
+        transform: translateX(calc(-50% - 1.5rem)); 
+    }
 }
 
 
