@@ -65,11 +65,18 @@ h2::before{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    
+    /* The Magic Sauce */
+    position: fixed; /* Fixed is more reliable than sticky for 'always on top' navbars */
     top: 0;
-    z-index: 1000;
+    left: 0;
+    width: 100%;
+    
+    z-index: 10000; /* Ensure it's above everything */
     background-color: rgba(18, 18, 18, 0.95);
     backdrop-filter: blur(6px);
+    padding: 0 5%; /* Adds some breathing room on the sides */
+    box-sizing: border-box; /* Ensures padding doesn't break the 100% width */
 }
 
 .nav-container {
@@ -117,7 +124,16 @@ h2::before{
 body, html {
     overflow-x: hidden;
 }
+body {
+    /* Adjust the 80px based on how tall your navbar actually is */
+    padding-top: 80px; 
+}
 
+@media (max-width: 896px) {
+    body {
+        padding-top: 60px; /* Slightly less on mobile if the nav is shorter */
+    }
+}
 /* ========================= */
 /* BURGER MENU */
 /* ========================= */
